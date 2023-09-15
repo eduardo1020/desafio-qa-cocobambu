@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.8.2 on win32)" generated="20230914 21:58:43.159" rpa="false" schemaversion="3">
+<suite id="s1" name="Reset Senha" source="C:\Users\duduz\Desktop\desafio_qa_cocobambu\test_automation_cocobambu\suites\reset_senha">
+<suite id="s1-s1" name="Reset Senha" source="C:\Users\duduz\Desktop\desafio_qa_cocobambu\test_automation_cocobambu\suites\reset_senha\reset_senha.robot">
+<test id="s1-s1-t1" name="CT 0001 – Solicitação de Redefinição de Senha Bem-Sucedida" line="6">
+<kw name="Acessar o site" library="setup_teardown" type="SETUP">
+<kw name="Dado que eu acesse a página de login do coco bambu app" library="cadastro_page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${general.URL_COCOBAMBU}</arg>
+<arg>${general.Browser}</arg>
+<arg>alias=first</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230914 21:58:43.554" level="INFO">Opening browser 'chrome' to base url 'https://app.cocobambu.com/entrar?backPage=on-boarding%2Fdelivery%3FnextPage%3D%252Fdelivery'.</msg>
+<status status="PASS" starttime="20230914 21:58:43.551" endtime="20230914 21:58:48.197"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230914 21:58:48.198" endtime="20230914 21:58:48.326"/>
+</kw>
+<status status="PASS" starttime="20230914 21:58:43.551" endtime="20230914 21:58:48.327"/>
+</kw>
+<status status="PASS" starttime="20230914 21:58:43.550" endtime="20230914 21:58:48.327"/>
+</kw>
+<kw name="Quando eu clicar na opção Reset de senha" library="reset_senha_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${reset_senha.Button_Resetar_Senha}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230914 21:58:48.329" level="INFO">Clicking element '//span[contains(text(), 'Resetar senha')]'.</msg>
+<status status="PASS" starttime="20230914 21:58:48.327" endtime="20230914 21:58:48.467"/>
+</kw>
+<status status="PASS" starttime="20230914 21:58:48.327" endtime="20230914 21:58:48.467"/>
+</kw>
+<kw name="E Inserir um email válido e cadastrado" library="reset_senha_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${reset_senha.Input_Email_Para_Recuperar_Senha}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230914 21:58:48.468" endtime="20230914 21:58:49.421"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${reset_senha.Input_Email_Para_Recuperar_Senha}</arg>
+<arg>${dados_validos_login.Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230914 21:58:49.424" level="INFO">Typing text 'eduardotestecocobambu@outlook.com' into text field '//div[@class="alert-wrapper ion-overlay-wrapper sc-ion-alert-md"]//input'.</msg>
+<status status="PASS" starttime="20230914 21:58:49.422" endtime="20230914 21:58:49.627"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230914 21:58:52.636" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230914 21:58:49.628" endtime="20230914 21:58:52.636"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${reset_senha.Button_Recuperar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230914 21:58:52.640" level="INFO">Clicking element '//span[contains(text(), "Recuperar")]'.</msg>
+<status status="PASS" starttime="20230914 21:58:52.637" endtime="20230914 21:58:52.753"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230914 21:58:55.753" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230914 21:58:52.753" endtime="20230914 21:58:55.753"/>
+</kw>
+<status status="PASS" starttime="20230914 21:58:48.468" endtime="20230914 21:58:55.753"/>
+</kw>
+<kw name="E ir até o email cadastrado e redefinir a senha" library="reset_senha_page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${general.URL_INBOX}</arg>
+<arg>${general.Browser}</arg>
+<arg>alias=second</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230914 21:58:55.759" level="INFO">Opening browser 'chrome' to base url 'https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=16&amp;ct=1694542838&amp;rver=7.0.6738.0&amp;wp=MBI_SSL&amp;wreply=https%3a%2f%2foutlook.live.com%2fowa%2f%3fnlp%3d1%26cobrandid%3dab0455a0-8d03-46b9-b18b-df2f57b9e44c%26RpsCsrfState%3d14f054e5-c25d-666c-2191-80f2577d4eb3&amp;id=292841&amp;aadredir=1&amp;whr=outlook.com&amp;CBCXT=out&amp;lw=1&amp;fl=dob%2cflname%2cwld&amp;cobrandid=ab0455a0-8d03-46b9-b18b-df2f57b9e44c'.</msg>
+<status status="PASS" starttime="20230914 21:58:55.756" endtime="20230914 21:58:57.919"/>
+</kw>
+<kw name="Switch Browser" library="SeleniumLibrary">
+<arg>second</arg>
+<doc>Switches between active browsers using ``index_or_alias``.</doc>
+<status status="PASS" starttime="20230914 21:58:57.919" endtime="20230914 21:58:57.920"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230914 21:58:57.920" endtime="20230914 21:58:58.162"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login.Input_Login_Outlook}</arg>
+<arg>${dados_validos_login.Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230914 21:58:58.165" level="INFO">Typing text 'eduardotestecocobambu@outlook.com' into text field '//*[@id="i0116"]'.</msg>
+<status status="PASS" starttime="20230914 21:58:58.163" endtime="20230914 21:58:58.455"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${reset_senha.Button_Proximo}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230914 21:58:58.455" endtime="20230914 21:58:58.518"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login.Button_Proximo}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230914 21:58:58.520" level="INFO">Clicking element '//*[@id="idSIButton9"]'.</msg>
+<status status="PASS" starttime="20230914 21:58:58.518" endtime="20230914 21:58:58.609"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${reset_senha.Input_Senha_Outlook}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230914 21:58:58.609" endtime="20230914 21:58:59.153"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login.Input_Senha_Outlook}</arg>
+<arg>${dados_validos_login.Senha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230914 21:58:59.157" level="INFO">Typing text 'Teste1!@#' into text field '//*[@id="i0118"]'.</msg>
+<status status="PASS" starttime="20230914 21:58:59.153" endtime="20230914 21:58:59.287"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${reset_senha.Button_Entrar_Outlook}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230914 21:58:59.288" endtime="20230914 21:58:59.320"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login.Button_Entrar_Outlook}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230914 21:58:59.323" level="INFO">Clicking element '//*[@id="idSIButton9"]'.</msg>
+<status status="PASS" starttime="20230914 21:58:59.321" endtime="20230914 21:58:59.657"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${reset_senha.Button_Continuar_Conectado}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230914 21:58:59.657" endtime="20230914 21:59:00.393"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login.Button_Continuar_Conectado}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230914 21:59:00.395" level="INFO">Clicking element '//*[@id="idBtn_Back"]'.</msg>
+<status status="PASS" starttime="20230914 21:59:00.393" endtime="20230914 21:59:12.816"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${reset_senha.Elemento_Caixa_de_Entrada}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230914 21:59:12.817" endtime="20230914 21:59:15.023"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${reset_senha.Email_Redefinição_Senha}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230914 21:59:15.026" level="INFO">Clicking element '//span[contains(text(), "noreply@cocobambu.com")]'.</msg>
+<status status="PASS" starttime="20230914 21:59:15.023" endtime="20230914 21:59:17.427"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${reset_senha.Elemento_Email_Redefinir_Senha}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230914 21:59:17.428" endtime="20230914 21:59:19.140"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${reset_senha.Button_Redefinir_Senha_Email}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230914 21:59:19.143" level="INFO">Clicking element '//*[@id="UniqueMessageBody"]/div/div/div/div/div/div/a'.</msg>
+<status status="PASS" starttime="20230914 21:59:19.141" endtime="20230914 21:59:19.450"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${reset_senha.Input_Nova_Senha}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20230914 21:59:30.057" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-130.png"&gt;&lt;img src="selenium-screenshot-130.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230914 21:59:30.057" level="FAIL">Element '//div[@class="input-div"]//input[@name="new_password1"]' not visible after 10 seconds.</msg>
+<status status="FAIL" starttime="20230914 21:59:19.450" endtime="20230914 21:59:30.059"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${reset_senha.Input_Nova_Senha}</arg>
+<arg>${Redefinição_Senha.nova_senha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230914 21:59:30.059" endtime="20230914 21:59:30.060"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${reset_senha.Input_Confirmar_Nova_Senha}</arg>
+<arg>${Redefinição_Senha.confirmar_nova_senha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230914 21:59:30.060" endtime="20230914 21:59:30.060"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${reset_senha.Button_Alterar_Minha_Senha}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230914 21:59:30.060" endtime="20230914 21:59:30.060"/>
+</kw>
+<status status="FAIL" starttime="20230914 21:58:55.754" endtime="20230914 21:59:30.061"/>
+</kw>
+<kw name="Então faço login com a nova senha" library="reset_senha_page">
+<status status="NOT RUN" starttime="20230914 21:59:30.092" endtime="20230914 21:59:30.093"/>
+</kw>
+<status status="FAIL" starttime="20230914 21:58:43.549" endtime="20230914 21:59:30.093">Element '//div[@class="input-div"]//input[@name="new_password1"]' not visible after 10 seconds.</status>
+</test>
+<status status="FAIL" starttime="20230914 21:58:43.213" endtime="20230914 21:59:30.099"/>
+</suite>
+<status status="FAIL" starttime="20230914 21:58:43.170" endtime="20230914 21:59:30.107"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Reset Senha">Reset Senha</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Reset Senha">Reset Senha.Reset Senha</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
